@@ -54,6 +54,7 @@ function seata1() {
     }
     else {
         alert('You cannot select more than 4 seats!')
+        
 
     }
 
