@@ -563,6 +563,12 @@ function couponApply() {
         const textShow = document.getElementById('price-show')
         textShow.classList.remove('hidden')
 
+        const grandTotalSection = document.getElementById('grand-total-section')
+        grandTotalSection.classList.add('hidden')
+
+        const totalPriceSection = document.getElementById('total-price')
+        totalPriceSection.classList.add('hidden')
+
 
 
 
