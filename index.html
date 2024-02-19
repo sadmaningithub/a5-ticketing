@@ -362,11 +362,13 @@
                                 <h4>BDT<span id="price">0 </span></h4>
                             </div>
 
-                            <label class=" form-control flex flex-row gap-1 w-full ">
+                            <label id="coupon-apply" class=" form-control flex flex-row gap-1 w-full ">
 
-                                <input type="text" placeholder="Coupon" class="input input-bordered w-full " />
-                                <button class="btn text-[#FFFFFF] bg-[#1DD100]">Apply</button>
+                                <input id="coupon" type="text" placeholder="Coupon" class="input input-bordered w-full " />
+                                <button id="coupon-btn" onclick="couponApply()" class="btn text-[#FFFFFF] bg-[#1DD100]">Apply</button>
                             </label>
+
+                            <p id="discount-text"></p>
 
                             <div class="flex flex-row justify-between text-base	font-inter-500">
                                 <h4>Grand Total</h4>

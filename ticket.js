@@ -540,6 +540,19 @@ function seatb4() {
 
 
 function couponApply(){
+    const couponCodeS = 'NEW15';
+    const couponCodeC = 'Couple 20'
 
+    const inputContainer = document.getElementById('coupon')
+    const inputText = inputContainer.value
+    
+    if(inputText === couponCodeS || inputText === couponCodeC){
+        console.log('Discount')
+        const buttonToHide = document.getElementById('coupon-apply')
+        buttonToHide.classList.add('hidden')
+    }
+    else{
+        console.log('Sad')
+    }
 }
 
