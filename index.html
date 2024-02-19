@@ -20,7 +20,7 @@
     <header>
         <!-- Nav bar -->
 
-        <div class="navbar bg-base-100">
+        <div id="nav-section" class="navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -67,7 +67,7 @@
 
         <!-- banner start -->
 
-        <div class="hero  bg-no-repeat bg-gradient-to-r from-[#0307127f] to-[#03071200] rounded-s-3xl	"
+        <div id="banner-section" class="hero  bg-no-repeat bg-gradient-to-r from-[#0307127f] to-[#03071200] rounded-s-3xl	"
             style="background-image: url(images/banner.png);">
             <!-- <div class="hero-overlay  "></div> -->
             <div class="hero-content text-center text-neutral-content ">
@@ -76,15 +76,14 @@
                             Paribahan</span></h1>
                     <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The
                         integrated testing features allow for a streamlined .</p>
-                    <button
-                        class="rounded-xl btn-primary bg-[#1DD100] text-[#030712] py-5 px-8 text-xl font-raleway-700">Buy
+                    <button id="to-ticket-btn" class="rounded-xl btn-primary bg-[#1DD100] text-[#030712] py-5 px-8 text-xl font-raleway-700">Buy
                         Tickets</button>
                 </div>
             </div>
         </div>
         <!-- banner end -->
         <!-- badge section -->
-        <div class="flex flex-col lg:flex-row justify-center gap-8">
+        <div id="badge-section" class="flex flex-col lg:flex-row justify-center gap-8">
             <div class="flex flex-row gap-4 border-b-4 rounded-3xl	w-80 justify-center py-8 border-[#1DD100]">
                 <div class="">
                     <img src="images/people.png" alt="">
@@ -121,8 +120,10 @@
     </header>
 
     <main>
+
+
         <!-- coupon start -->
-        <section class="my-32 space-y-14 text-center">
+        <section id="coupon-section" class="my-32 space-y-14 text-center">
             <h1 class="text-center font-raleway-700 text-4xl">Best offers for you</h1>
 
             <div class="flex flex-col lg:flex-row gap-6">
@@ -188,7 +189,7 @@
 
         <!-- ticket section -->
         <!-- ticket info part -->
-        <div class="pt-32 px-36 bg-[#F7F8F8] border-t-2 border-[#1DD100] rounded-t-3xl">
+        <div id="ticket-info" class="pt-32 px-36 bg-[#F7F8F8] border-t-2 border-[#1DD100] rounded-t-3xl">
 
             <section>
                 <div class="text-center space-y-8 mb-12">
@@ -274,7 +275,7 @@
             
 
             <!-- ticket section -->
-            <div class="flex flex-row p-8 gap-16 bg-[#FFFFFF] mt-5 rounded-3xl">
+            <div id="ticket-container" class="flex flex-row p-8 gap-16 bg-[#FFFFFF] mt-5 rounded-3xl">
                 <div class=" space-y-5 flex-1">
                     <h1 class="text-2xl	font-raleway-600">Select Your Seat</h1>
                     <hr class="border-dashed">
@@ -368,7 +369,7 @@
                                 <button id="coupon-btn" onclick="couponApply()" class="btn text-[#FFFFFF] bg-[#1DD100]">Apply</button>
                             </label>
 
-                            <p id="discount-text"></p>
+                            <p id="price-show" class="hidden">Awesome! Your total price is <span id="discount-text">BDT 0 </span> after applying coupon.</p>
 
                             <div class="flex flex-row justify-between text-base	font-inter-500">
                                 <h4>Grand Total</h4>
@@ -376,7 +377,7 @@
                             </div>
                         </div>
                         <div class="space-y-8">
-                            <button class="btn text-[#FFFFFF] bg-[#1DD100] w-full">Next</button>
+                            <button onclick="toModal()" id="next-to-modal" class="btn text-[#FFFFFF] bg-[#1DD100] w-full">Next</button>
                         </div>
 
 
@@ -384,6 +385,28 @@
                 </div>
             </div>
         </div>
+
+        <!-- modal -->
+        <section id="modal-section" class="hidden flex flex-row justify-center bg-[#F2F1F1] py-32 mt-32 rounded-2xl">
+            <div class="flex flex-col justify-center text-center bg-[#FFFFFF] space-y-8 w-3/4 py-12 rounded-2xl">
+                <div class="flex justify-center ">
+                    <img src="images/success.png" alt="">
+                </div>
+                <h3 class="text-2xl	text-[#27AE60] font-raleway-600">Success</h3>
+                <h4 class="font-inter-500 font-bold	">
+                    Thank you for Booking Our Bus Seats.
+                    <br> 
+                    We are working hard to find the best service and deals for you. 
+                </h4>
+                <p class="text-[#4A4A4A]"> Shortly you will find a confirmation in your email. </p>
+                <div>
+                    <button id="modal-btn" class="btn btn-wide rounded-full bg-[#27AE60] text-white ">Continue</button>
+                </div>
+                
+
+            </div>
+        </section>
+        <!-- modal -->
 
 
 

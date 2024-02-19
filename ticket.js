@@ -1,3 +1,11 @@
+
+document.getElementById('to-ticket-btn').addEventListener('click', function () {
+    const ticketBookingContainer = document.getElementById('ticket-container')
+    ticketBookingContainer.scrollIntoView()
+})
+
+
+
 function seata1() {
     const seatsSelected = document.getElementById('seats-selected')
     const seatNumbers = seatsSelected.innerText
@@ -63,7 +71,7 @@ function seata1() {
 
 
 
-    
+
 
 
 }
@@ -539,20 +547,74 @@ function seatb4() {
 }
 
 
-function couponApply(){
+function couponApply() {
     const couponCodeS = 'NEW15';
     const couponCodeC = 'Couple 20'
 
     const inputContainer = document.getElementById('coupon')
     const inputText = inputContainer.value
-    
-    if(inputText === couponCodeS || inputText === couponCodeC){
-        console.log('Discount')
+
+    if (inputText === couponCodeS || inputText === couponCodeC) {
+
+
         const buttonToHide = document.getElementById('coupon-apply')
         buttonToHide.classList.add('hidden')
+
+        const textShow = document.getElementById('price-show')
+        textShow.classList.remove('hidden')
+
+
+
+
+
+        const totalPrice = document.getElementById('price')
+        const totalPriceNum = totalPrice.innerText
+        const totalPriceMain = parseInt(totalPriceNum)
+
+        if (inputText === couponCodeS) {
+            const priceFinal = totalPriceMain - totalPriceMain * 0.15
+            const priceToShow = document.getElementById('discount-text')
+            priceToShow.innerText = priceFinal
+
+        }
+        else {
+            const priceFinal = totalPriceMain - totalPriceMain * 0.20
+            const priceToShow = document.getElementById('discount-text')
+            priceToShow.innerText = priceFinal
+        }
+
+
     }
-    else{
+    else {
         console.log('Sad')
     }
 }
+
+function toModal() {
+    const modal = document.getElementById('modal-section')
+    modal.classList.remove('hidden')
+
+    const nav = document.getElementById('nav-section')
+    nav.classList.add('hidden')
+
+    const banner = document.getElementById('banner-section')
+    banner.classList.add('hidden')
+
+    const badge = document.getElementById('badge-section')
+    badge.classList.add('hidden')
+
+    const coupon = document.getElementById('coupon-section')
+    coupon.classList.add('hidden')
+
+    const info = document.getElementById('ticket-info')
+    info.classList.add('hidden')
+
+
+}
+
+
+document.getElementById('modal-btn').addEventListener('click', function () {
+    window.location.reload()
+})
+
 
