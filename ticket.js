@@ -591,23 +591,34 @@ function couponApply() {
 }
 
 function toModal() {
-    const modal = document.getElementById('modal-section')
-    modal.classList.remove('hidden')
 
-    const nav = document.getElementById('nav-section')
-    nav.classList.add('hidden')
+    const seatNumber = document.getElementById('seats-selected')
+    const seatNum = seatNumber.innerText
 
-    const banner = document.getElementById('banner-section')
-    banner.classList.add('hidden')
 
-    const badge = document.getElementById('badge-section')
-    badge.classList.add('hidden')
+    if (seatNum > 0) {
+        const modal = document.getElementById('modal-section')
+        modal.classList.remove('hidden')
 
-    const coupon = document.getElementById('coupon-section')
-    coupon.classList.add('hidden')
+        const nav = document.getElementById('nav-section')
+        nav.classList.add('hidden')
 
-    const info = document.getElementById('ticket-info')
-    info.classList.add('hidden')
+        const banner = document.getElementById('banner-section')
+        banner.classList.add('hidden')
+
+        const badge = document.getElementById('badge-section')
+        badge.classList.add('hidden')
+
+        const coupon = document.getElementById('coupon-section')
+        coupon.classList.add('hidden')
+
+        const info = document.getElementById('ticket-info')
+        info.classList.add('hidden')
+    }
+    else{
+        alert('Please select ticket first')
+    }
+
 
 
 }
@@ -616,5 +627,7 @@ function toModal() {
 document.getElementById('modal-btn').addEventListener('click', function () {
     window.location.reload()
 })
+
+
 
 
